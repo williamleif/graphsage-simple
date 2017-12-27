@@ -35,7 +35,6 @@ class Encoder(nn.Module):
         Generates embeddings for a batch of nodes.
 
         nodes     -- list of nodes
-        mode      -- string desiginating the mode of the nodes
         """
         neigh_feats = self.aggregator.forward(nodes, [self.adj_lists[node] for node in nodes], 
                 self.num_sample)
