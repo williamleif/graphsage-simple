@@ -36,7 +36,7 @@ class Encoder(nn.Module):
 
         nodes     -- list of nodes
         """
-        neigh_feats = self.aggregator.forward(nodes, [self.adj_lists[node] for node in nodes], 
+        neigh_feats = self.aggregator.forward(nodes, [self.adj_lists[int(node)] for node in nodes], 
                 self.num_sample)
         if not self.gcn:
             if self.cuda:
